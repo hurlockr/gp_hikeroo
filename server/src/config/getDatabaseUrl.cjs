@@ -5,7 +5,7 @@ const getDatabaseUrl = (nodeEnv) => {
       test: "postgres://postgres:postgres@localhost:5432/gp-hiking-reviews_test",
       e2e: "postgres://postgres:postgres@localhost:5432/gp-hiking-reviews_e2e",
     }[nodeEnv] || process.env.DATABASE_URL
-  );
-};
+  )
+}
 
-module.exports = getDatabaseUrl;
+module.exports = getDatabaseUrl
