@@ -8,6 +8,8 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
+import IndexPage from "./IndexPage"
+
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
   useEffect(() => {
@@ -26,6 +28,7 @@ const App = (props) => {
         <Route exact path="/">
           <h2>Hello from react</h2>
         </Route>
+        <Route exact path="/index" component={IndexPage}/>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
