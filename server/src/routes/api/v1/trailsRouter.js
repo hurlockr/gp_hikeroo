@@ -2,9 +2,9 @@ import express from "express"
 
 import { Trail } from "../../../models/index.js"
 
-const indexRouter = new express.Router()
+const trailsRouter = new express.Router()
 
-indexRouter.get('/', async (req, res) => {
+trailsRouter.get("/", async (req, res) => {
   try {
     const trails = await Trail.query()
     return res.status(200).json({ trails: trails })
@@ -13,4 +13,4 @@ indexRouter.get('/', async (req, res) => {
   }
 })
 
-export default indexRouter
+export default trailsRouter
