@@ -24,7 +24,11 @@ const TrailsPage = (props) => {
   }, [])
 
   const trailListItems = trails.map((trailItem) => {
-    return <li key={trailItem.id}>{trailItem.trailName}</li>
+    return (
+      <li key={trailItem.id}>
+        <Link to={`/trails/${trailItem.id}`}>{trailItem.trailName}</Link>
+      </li>
+    )
   })
 
   return (
