@@ -16,6 +16,21 @@ trailsRouter.get("/", async (req, res) => {
   }
 })
 
+trailsRouter.get("/:id", async (req, res) => {
+  const { id } = req.params
+  try {
+    const trail = await Trail.query().findById(id)
+    if (trail) {
+      res.status(200).json({ trail: trail })
+    } else {
+      res.status(404)
+    }
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({ errors: error })
+  }
+})
+
 trailsRouter.post("/", async (req, res) => {
   const { body } = req
   const formInput = cleanUserInput(body)
@@ -35,7 +50,6 @@ trailsRouter.post("/", async (req, res) => {
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
     }
-    return res.status(500).json({ errors: error })
   }
 })
 
