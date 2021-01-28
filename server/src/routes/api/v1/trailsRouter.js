@@ -48,6 +48,8 @@ trailsRouter.post("/", async (req, res) => {
   } catch (error) {
     if (error instanceof ValidationError) {
       return res.status(422).json({ errors: error.data })
+    } else {
+      return res.status(500).json({ errors: error })
     }
   }
 })
