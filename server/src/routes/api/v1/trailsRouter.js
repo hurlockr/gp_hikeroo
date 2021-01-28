@@ -35,8 +35,7 @@ trailsRouter.post("/", async (req, res) => {
   const { body } = req
   const formInput = cleanUserInput(body)
   const { trailName, trailLength, trailLocation, trailDescription, estimateTime } = formInput
-  // const { trailId } = req.params
-  console.log(formInput)
+
   try {
     const newTrail = await Trail.query().insertAndFetch({
       trailName,
