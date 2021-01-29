@@ -2,10 +2,10 @@ import React, { useState } from "react"
 
 const TrailForm = (props) => {
   const [trailRecord, setTrailRecord] = useState({
-    trailName: "",
-    trailLength: "",
-    trailLocation: "",
-    trailDescription: "",
+    name: "",
+    length: "",
+    location: "",
+    description: "",
     estimateTime: "",
   })
 
@@ -24,46 +24,50 @@ const TrailForm = (props) => {
   return (
     <div className="trail-form">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="trailName">
+        <label htmlFor="name">
           Trail Name:
           <input
-            id="trialName"
+            id="name"
             type="text"
-            name="trailName"
+            name="name"
             onChange={handleChange}
-            value={trailRecord.trailName}
+            value={trailRecord.name}
           />
         </label>
-        <label htmlFor="trailLength">
+
+        <label htmlFor="length">
           Trail Length:
           <input
-            id="trialLength"
+            id="length"
             type="text"
-            name="trailLength"
+            name="length"
             onChange={handleChange}
-            value={trailRecord.trailLength}
+            value={trailRecord.length}
           />
         </label>
-        <label htmlFor="trailLocation">
+
+        <label htmlFor="location">
           Trail Location:
           <input
-            id="trialLocation"
+            id="location"
             type="text"
-            name="trailLocation"
+            name="location"
             onChange={handleChange}
-            value={trailRecord.trailLocation}
+            value={trailRecord.location}
           />
         </label>
-        <label htmlFor="trailDescription">
+
+        <label htmlFor="description">
           Trail Description:
           <input
-            id="trialDescription"
+            id="description"
             type="text"
-            name="trailDescription"
+            name="description"
             onChange={handleChange}
-            value={trailRecord.trailDescription}
+            value={trailRecord.description}
           />
         </label>
+
         <label htmlFor="estimateTime">
           Estimated Time to Complete:
           <input
@@ -74,6 +78,7 @@ const TrailForm = (props) => {
             value={trailRecord.estimateTime}
           />
         </label>
+
         <div className="button-group">
           <input className="button" type="submit" value="Submit" />
         </div>
