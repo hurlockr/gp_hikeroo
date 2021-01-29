@@ -26,10 +26,10 @@ const TrailShowPage = (props) => {
   return (
     <div>
       <ul>
-        <li>Name: {trail.trailName}</li>
-        <li>Length of Trail: {trail.trailLength}</li>
-        <li>Description: {trail.trailDescription}</li>
-        <li>Location: {trail.trailLocation}</li>
+        <li>Name: {trail.name}</li>
+        <li>Length of Trail: {trail.length}</li>
+        <li>Description: {trail.description}</li>
+        <li>Location: {trail.location}</li>
         <li>Estimate Time: {trail.estimateTime}</li>
       </ul>
     </div>
