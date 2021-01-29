@@ -34,14 +34,14 @@ trailsRouter.get("/:id", async (req, res) => {
 trailsRouter.post("/", async (req, res) => {
   const { body } = req
   const formInput = cleanUserInput(body)
-  const { trailName, trailLength, trailLocation, trailDescription, estimateTime } = formInput
+  const { name, length, location, description, estimateTime } = formInput
 
   try {
     const newTrail = await Trail.query().insertAndFetch({
-      trailName,
-      trailLength,
-      trailLocation,
-      trailDescription,
+      name,
+      length,
+      location,
+      description,
       estimateTime,
     })
     return res.status(201).json({ trail: newTrail })
