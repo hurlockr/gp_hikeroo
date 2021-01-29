@@ -2,5 +2,6 @@
 const User = require("./User")
 const Trail = require("./Trail")
 const Model = require("./Model")
+const Review = require("./Review")
 
-module.exports = {User, Trail, Model};
+module.exports = { User, Trail, Model, Review }

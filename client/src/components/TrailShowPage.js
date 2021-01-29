@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 
 const TrailShowPage = (props) => {
-  const [trail, setTrail] = useState({})
+  const [trail, setTrail] = useState({
+    reviews: [],
+  })
 
   const getTrail = async () => {
     const id = props.match.params.id
@@ -23,6 +25,15 @@ const TrailShowPage = (props) => {
     getTrail()
   }, [])
 
+  const getReviews = trail.reviews.map((review) => {
+    return (
+      <ul>
+        <p>Comment: {review.comment}</p>
+        <p>Rating: {review.rating}</p>
+      </ul>
+    )
+  })
+
   return (
     <div>
       <ul>
@@ -32,6 +43,7 @@ const TrailShowPage = (props) => {
         <li>Location: {trail.trailLocation}</li>
         <li>Estimate Time: {trail.estimateTime}</li>
       </ul>
+      <div>{getReviews}</div>
     </div>
   )
 }

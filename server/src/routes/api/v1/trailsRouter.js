@@ -20,6 +20,7 @@ trailsRouter.get("/:id", async (req, res) => {
   const { id } = req.params
   try {
     const trail = await Trail.query().findById(id)
+    trail.reviews = await trail.$relatedQuery("reviews")
     if (trail) {
       res.status(200).json({ trail: trail })
     } else {
