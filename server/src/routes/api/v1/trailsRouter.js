@@ -4,13 +4,19 @@ const { ValidationError } = objection
 
 import { Trail } from "../../../models/index.js"
 import cleanUserInput from "../../../services/cleanUserInput.js"
+import TrailSerializer from "../../serializers/TrailSerializer.js"
 
 const trailsRouter = new express.Router()
 
 trailsRouter.get("/", async (req, res) => {
   try {
     const trails = await Trail.query()
-    return res.status(200).json({ trails: trails })
+    const serializedTrails = []
+    for (const trail of trails) {
+      const serializedTrail = await TrailSerializer.getSummary(trail)
+      serializedTrails.push(serializedTrail)
+    }
+    return res.status(200).json({ trails: serializedTrails })
   } catch (error) {
     return res.status(500).json({ errors: error })
   }
@@ -20,9 +26,9 @@ trailsRouter.get("/:id", async (req, res) => {
   const { id } = req.params
   try {
     const trail = await Trail.query().findById(id)
-    trail.reviews = await trail.$relatedQuery("reviews")
+    const serializedTrail = await TrailSerializer.getSummary(trail)
     if (trail) {
-      res.status(200).json({ trail: trail })
+      res.status(200).json({ trail: serializedTrail })
     } else {
       res.status(404)
     }
