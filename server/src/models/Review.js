@@ -9,7 +9,7 @@ class Review extends Model {
     const { Trail, User } = require("./index")
 
     return {
-      trails: {
+      trail: {
         relation: Model.BelongsToOneRelation,
         modelClass: Trail,
         join: {
@@ -18,7 +18,7 @@ class Review extends Model {
         },
       },
 
-      users: {
+      user: {
         relation: Model.BelongsToOneRelation,
         modelClass: User,
         join: {
