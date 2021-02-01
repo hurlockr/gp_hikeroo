@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import ReviewForm from "./ReviewForm"
 
 const TrailShowPage = (props) => {
   const [trail, setTrail] = useState({
@@ -45,7 +46,10 @@ const TrailShowPage = (props) => {
         <li>Location: {trail.location}</li>
         <li>Estimate Time: {trail.estimateTime}</li>
       </ul>
-      <div>{getReviews}</div>
+      <div>
+        <ReviewForm />
+        {getReviews}
+      </div>
     </div>
   )
 }
