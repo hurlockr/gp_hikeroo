@@ -18,8 +18,8 @@ class Trail extends Model {
         },
       },
 
-      users: {
-        relation: Model.ManyToManyRelation,
+      user: {
+        relation: Model.BelongsToOneRelation,
         modelClass: User,
         join: {
           from: "trails.id",

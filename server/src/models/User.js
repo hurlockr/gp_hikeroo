@@ -58,7 +58,7 @@ class User extends uniqueFunc(Model) {
       },
 
       trails: {
-        relation: Model.ManyToManyRelation,
+        relation: Model.HasManyRelation,
         modelClass: Trail,
         join: {
           from: "users.id",
