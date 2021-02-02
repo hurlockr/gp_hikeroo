@@ -9,8 +9,11 @@ class TrailSerializer {
       serializedTrail[attribute] = trail[attribute]
     }
     const relatedReviews = await trail.$relatedQuery("reviews")
-    const serializedReviews = relatedReviews.map((review) => ReviewSerializer.getSummary(review))
+    const serializedReviews = await Promise.all(
+      relatedReviews.map((review) => ReviewSerializer.getSummary(review))
+    )
     serializedTrail.reviews = serializedReviews
+    debugger
     return serializedTrail
   }
 }

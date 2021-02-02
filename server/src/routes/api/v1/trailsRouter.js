@@ -14,6 +14,7 @@ trailsRouter.get("/", async (req, res) => {
     const serializedTrails = []
     for (const trail of trails) {
       const serializedTrail = await TrailSerializer.getSummary(trail)
+      debugger
       serializedTrails.push(serializedTrail)
     }
     return res.status(200).json({ trails: serializedTrails })
