@@ -8,9 +8,9 @@ class ReviewSerializer {
     for (const attribute of allowedAttributes) {
       serializedReview[attribute] = review[attribute]
     }
-    const relatedUser = await review.$relatedQuery("users")
-    const serializedReviews = relatedUser.map((user) => UserSerializer.getSummary(user))
-    serializedUser.reviews = serializedReviews
+    const relatedUser = await review.$relatedQuery("user")
+    const serializedUser = UserSerializer.getSummary(relatedUser)
+    serializedReview.user = serializedUser
     return serializedReview
   }
 }
