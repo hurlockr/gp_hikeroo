@@ -13,7 +13,6 @@ class TrailSerializer {
       relatedReviews.map((review) => ReviewSerializer.getSummary(review))
     )
     serializedTrail.reviews = serializedReviews
-    debugger
     return serializedTrail
   }
 }
