@@ -26,6 +26,33 @@ const TrailShowPage = (props) => {
     getTrail()
   }, [])
 
+  const postReview = async (newReviewData) => {
+    try {
+      const response = await fetch(`/api/v1/trails/${id}`, {
+        method: "POST",
+        headers: new Headers({
+          "Content-Type": "application/json",
+        }),
+        body: JSON.stringify(newReviewData),
+      })
+      if (!response.ok) {
+        if (response.status === 422) {
+          const body = await response.json()
+          const newErrors = translateServerErrors(body.errors)
+          return setErrors(newErrors)
+        } else {
+          const errorMessage = `${response.status} (${response.statusText})`
+          const error = new Error(errorMessage)
+          throw error
+        }
+      } else {
+        const body = await response.json()
+        const updatedReviews = review.concat(body.review)
+        setReviews(updatedReviews)
+      }
+    } catch (error) {}
+  }
+
   const getReviews = trail.reviews.map((review) => {
     return (
       <div>
@@ -47,7 +74,7 @@ const TrailShowPage = (props) => {
         <li>Estimate Time: {trail.estimateTime}</li>
       </ul>
       <div>
-        <ReviewForm />
+        <ReviewForm postReview={postReview} />
         {getReviews}
       </div>
     </div>
