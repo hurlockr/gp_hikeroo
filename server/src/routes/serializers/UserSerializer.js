@@ -1,5 +1,5 @@
 class UserSerializer {
-  static async getSummary(user) {
+  static getSummary(user) {
     const allowedAttributes = ["id"]
 
     let serializedUser = {}

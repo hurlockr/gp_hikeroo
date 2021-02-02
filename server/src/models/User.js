@@ -45,7 +45,7 @@ class User extends uniqueFunc(Model) {
     return serializedJson
   }
   static get relationMappings() {
-    const { Review, Trail } = require("./index")
+    const { Review } = require("./index")
 
     return {
       reviews: {
@@ -54,19 +54,6 @@ class User extends uniqueFunc(Model) {
         join: {
           from: "users.id",
           to: "reviews.userId",
-        },
-      },
-
-      trails: {
-        relation: Model.HasManyRelation,
-        modelClass: Trail,
-        join: {
-          from: "users.id",
-          through: {
-            from: "reviews.userId",
-            to: "reviews.trailId",
-          },
-          to: "trails.id",
         },
       },
     }
