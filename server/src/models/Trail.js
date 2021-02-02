@@ -5,6 +5,21 @@ class Trail extends Model {
     return "trails"
   }
 
+  static get relationMappings() {
+    const { Review } = require("./index")
+
+    return {
+      reviews: {
+        relation: Model.HasManyRelation,
+        modelClass: Review,
+        join: {
+          from: "trails.id",
+          to: "reviews.trailId",
+        },
+      },
+    }
+  }
+
   static get jsonSchema() {
     return {
       type: "object",
