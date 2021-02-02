@@ -1,7 +1,12 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
-// place global css here
+
+header {
+  background: lightblue;
+  text-color: black;
+}
+
 *,
 *::before,
 *::after {
