@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import TrailForm from "./trailForm"
+import TrailForm from "./TrailForm"
 import ErrorList from "./ErrorList"
 import translateServerErrors from "../services/translateServerErrors"
 
