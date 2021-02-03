@@ -6,7 +6,7 @@ class Trail extends Model {
   }
 
   static get relationMappings() {
-    const { Review, User } = require("./index")
+    const { Review } = require("./index")
 
     return {
       reviews: {
@@ -15,19 +15,6 @@ class Trail extends Model {
         join: {
           from: "trails.id",
           to: "reviews.trailId",
-        },
-      },
-
-      users: {
-        relation: Model.ManyToManyRelation,
-        modelClass: User,
-        join: {
-          from: "trails.id",
-          through: {
-            from: "reviews.trailId",
-            to: "reviews.userId",
-          },
-          to: "users.id",
         },
       },
     }

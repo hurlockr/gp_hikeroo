@@ -55,12 +55,10 @@ const TrailShowPage = (props) => {
 
   const getReviews = trail.reviews.map((review) => {
     return (
-      <div>
-        <ul>
-          <li>Comment: {review.comment}</li>
-          <li>Rating: {review.rating}</li>
-        </ul>
-      </div>
+      <ul>
+        <li>Comment: {review.comment}</li>
+        <li>Rating: {review.rating}</li>
+      </ul>
     )
   })
 
