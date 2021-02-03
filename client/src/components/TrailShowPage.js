@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react"
 import ReviewForm from "./ReviewForm"
+import ErrorList from "./ErrorList"
+import translateServerErrors from "../services/translateServerErrors"
 
 const TrailShowPage = (props) => {
   const [trail, setTrail] = useState({
     reviews: [],
   })
+  const [newReview, setNewReview] = useState({})
+  const [errors, setErrors] = useState([])
 
   const getTrail = async () => {
     const id = props.match.params.id
+
     try {
       const response = await fetch(`/api/v1/trails/${id}`)
       if (!response.ok) {
@@ -24,16 +29,19 @@ const TrailShowPage = (props) => {
 
   useEffect(() => {
     getTrail()
-  }, [])
+  }, [newReview])
 
   const postReview = async (newReviewData) => {
+    const trailId = props.match.params.id
+    const reviewDataTrailId = { ...newReviewData, trailId: trailId }
+
     try {
-      const response = await fetch(`/api/v1/trails/${id}`, {
+      const response = await fetch("/api/v1/reviews", {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",
         }),
-        body: JSON.stringify(newReviewData),
+        body: JSON.stringify(reviewDataTrailId),
       })
       if (!response.ok) {
         if (response.status === 422) {
@@ -47,15 +55,16 @@ const TrailShowPage = (props) => {
         }
       } else {
         const body = await response.json()
-        const updatedReviews = review.concat(body.review)
-        setReviews(updatedReviews)
+        setNewReview(body)
       }
-    } catch (error) {}
+    } catch (error) {
+      console.error(`Error in fetch: ${error.message}`)
+    }
   }
 
   const getReviews = trail.reviews.map((review) => {
     return (
-      <ul>
+      <ul key={review.id}>
         <li>Comment: {review.comment}</li>
         <li>Rating: {review.rating}</li>
       </ul>
@@ -72,6 +81,7 @@ const TrailShowPage = (props) => {
         <li>Estimate Time: {trail.estimateTime}</li>
       </ul>
       <div>
+        <ErrorList errors={errors} />
         <ReviewForm postReview={postReview} />
         {getReviews}
       </div>

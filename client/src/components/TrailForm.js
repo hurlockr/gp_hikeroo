@@ -19,6 +19,17 @@ const TrailForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.addTrail(trailRecord)
+    clearForm()
+  }
+
+  const clearForm = () => {
+    setTrailRecord({
+      name: "",
+      length: "",
+      location: "",
+      description: "",
+      estimateTime: "",
+    })
   }
 
   return (

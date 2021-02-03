@@ -16,6 +16,14 @@ const ReviewForm = ({ postReview }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     postReview(newReview)
+    clearForm()
+  }
+
+  const clearForm = () => {
+    setNewReview({
+      comment: "",
+      rating: "",
+    })
   }
 
   return (
