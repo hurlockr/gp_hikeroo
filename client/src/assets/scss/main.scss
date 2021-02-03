@@ -1,6 +1,7 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import "./utilities/variables";
 
 header {
   background: lightblue;
@@ -17,3 +18,5 @@ header {
   -moz-tab-size: 4;
   tab-size: 4;
 }
+
+

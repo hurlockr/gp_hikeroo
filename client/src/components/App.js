@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { hot } from "react-hot-loader/root"
 
 import getCurrentUser from "../services/getCurrentUser"
-import "../assets/scss/main.scss"
+import "../assets/scss/components/App.scss"
 import RegistrationForm from "./registration/RegistrationForm"
 import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
@@ -26,7 +26,14 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <h2>Hello from Trails</h2>
+          <div className="index">
+            <div className="index-navigation">
+              <h2>Time for testing</h2>
+            </div>
+            <div className="index-splash">
+            </div>
+            <h2>Hello from Trails</h2>
+          </div>
         </Route>
         <Route exact path="/trails" component={TrailsPage} />
         <Route exact path="/users/new" component={RegistrationForm} />
