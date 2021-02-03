@@ -1,0 +1,44 @@
+@import "./foundation/_settings.scss";
+
+.index {
+ flex-direction: column;
+}
+ 
+.index-navigation {
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: flex-start;
+ height: 20%;
+ background: grey;
+}
+ 
+.index-navigation-title {
+ 
+width: 269px;
+height: 124px;
+ 
+//font-family: Marmelad;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 43px;
+text-align: center;
+ 
+color: $orange;
+}
+ 
+index-body-box {
+ justify-content: center;
+ align-items: center;
+}
+ 
+index-body-title {
+//font-family: Marmelad;
+font-style: normal;
+font-weight: normal;
+font-size: 64px;
+line-height: 76px;
+text-align: center;
+color: $orange;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
