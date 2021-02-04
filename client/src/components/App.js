@@ -22,23 +22,23 @@ const App = (props) => {
         setCurrentUser(null)
       })
   }, [])
-  
+
   return (
     <Router>
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-        <div>
-          <div className="bg-img">
-          <div className="bg-container">
-            <div className="bg-text">
-              <h1>HIKEROO</h1>
-              <h2>All the best trails in Massachusetts</h2>
-              <h3>Let's Go Outside!</h3>
-            </div>
+          <div>
+            <div className="bg-img">
+              <div className="bg-container">
+                <div className="bg-text">
+                  <h1>HIKEROO</h1>
+                  <h2>All the best trails in Massachusetts</h2>
+                  <h3>Let's Go Outside!</h3>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
         </Route>
         <Route exact path="/trails" component={TrailsPage} />
         <Route exact path="/users/new" component={RegistrationForm} />

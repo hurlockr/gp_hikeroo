@@ -1,25 +1,30 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
-@import "./foundation/variables"; 
+@import "./variables";
 @include foundation-everything;
 
-body, html {
+body,
+html {
   height: 100%;
 }
 
-.bg-img { 
-  background: linear-gradient(rgba(0, 0, -0.5, -0.5), 
-    rgba(0, 0, 0, 1)), 
-    url(../images/trees-fog-sharp.jpg);
+.button-group {
+  border-radius: 20px;
+  background: #f17b30;
+}
+
+.bg-img {
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1)),
+    url(../images/pine-trees.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  min-height: 100%;
-  min-width: 1024px;
+  // min-height: 100%;
+  // min-width: 1024px;
   width: 100%;
   height: auto;
   position: fixed;
-  top: 100px;
+  top: 120px;
   left: 0;
 }
 
@@ -31,8 +36,6 @@ body, html {
 }
 
 .bg-text {
-  justify-conent: center;
   text-align: center;
   color: $orange;
 }
-

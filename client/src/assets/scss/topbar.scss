@@ -1,7 +1,12 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
-@import "./foundation/variables"; 
+@import "./variables";
 @include foundation-everything;
+
+.button-group {
+  border-radius: 20px;
+  background: #f17b30;
+}
 
 .top-bar {
   display: flex;
@@ -14,22 +19,21 @@
 .top-logo {
   display: flex;
   background: url(../images/hiker-trees.jpg);
-  height: 120px;
+  max-height: 100px;
 }
 
- .top-bar-right {
-   display: flex;
-   flex-direction: column;
- }
+.top-bar-right {
+  display: flex;
+  flex-direction: column;
+}
 
- .top-bar-right {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
- }
+.top-bar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .textboxclass {
   height: 30px;
   width: 40%;
 }
-

@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import TrailForm from "./TrailForm"
 import ErrorList from "./ErrorList"
 import translateServerErrors from "../services/translateServerErrors"
-import "../assets/scss/main.scss"
-import TopBar from "./layout/TopBar"
 
 const TrailsPage = (props) => {
   const [trails, setTrails] = useState([])
@@ -59,30 +57,26 @@ const TrailsPage = (props) => {
   }
   const trailListItems = trails.map((trailItem) => {
     return (
-      <div>
-        <li key={trailItem.id}>
-          <Link to={`/trails/${trailItem.id}`}>{trailItem.name}</Link>
-        </li>
-      </div>
+      <li key={trailItem.id}>
+        <Link to={`/trails/${trailItem.id}`}>{trailItem.name}</Link>
+      </li>
     )
   })
 
   return (
-  <div className="trail-bg-img-trails">       
+    <div className="trail-bg-img-trails">
       <div className="trails-and-form">
-        <div className="trails-left">  
-        <h3>All the amazing trails in Massachusetts:</h3>  
+        <div className="trails-left">
+          <h3>All the amazing trails in Massachusetts:</h3>
           <ul>{trailListItems}</ul>
-        </div>
-        <div>
         </div>
         <div className="form-right">
           <h3>Add New trail:</h3>
           <ErrorList errors={errors} />
           <TrailForm addTrail={addTrail} />
         </div>
+      </div>
     </div>
-  </div>
   )
 }
 

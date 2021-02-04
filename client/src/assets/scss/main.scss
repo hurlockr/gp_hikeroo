@@ -1,11 +1,16 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
-@import "./foundation/variables.scss";
+@import "./variables.scss";
 @include foundation-everything;
 
 @import "./app.scss";
 @import "./topbar.scss";
 @import "./trails.scss";
+
+.button-group {
+  border-radius: 20px;
+  background: #f17b30;
+}
 
 *,
 *::before,
