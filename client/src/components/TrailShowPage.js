@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import ReviewForm from "./ReviewForm"
 import ErrorList from "./ErrorList"
 import translateServerErrors from "../services/translateServerErrors"
 
 const TrailShowPage = (props) => {
+  const userStatus = props.user
+
   const [trail, setTrail] = useState({
     reviews: [],
   })
   const { id } = useParams()
 
   const [errors, setErrors] = useState([])
+  const [loginStatus, setLoginStatus] = useState(true)
 
   const getTrail = async () => {
     try {
@@ -32,6 +35,10 @@ const TrailShowPage = (props) => {
   }, [])
 
   const postReview = async (newReviewData) => {
+    if (!userStatus) {
+      setLoginStatus(false)
+    }
+
     const reviewDataTrailId = { ...newReviewData, trailId: id, userId: props.user.id }
 
     try {
@@ -54,7 +61,6 @@ const TrailShowPage = (props) => {
         }
       } else {
         const body = await response.json()
-        debugger
         setTrail({
           ...trail,
           reviews: [...trail.reviews, body.newReview],
@@ -74,6 +80,20 @@ const TrailShowPage = (props) => {
     )
   })
 
+  let loginStatusError = ""
+
+  if (!loginStatus) {
+    loginStatusError = (
+      <div>
+        <p>
+          <p>To Post a Review:</p>
+          <Link to="/users/new">Register </Link>
+          <Link to="/user-sessions/new">Sign In</Link>
+        </p>
+      </div>
+    )
+  }
+
   return (
     <div>
       <ul>
@@ -85,7 +105,8 @@ const TrailShowPage = (props) => {
       </ul>
       <div>
         <ErrorList errors={errors} />
-        <ReviewForm postReview={postReview} />
+        {loginStatusError}
+        <ReviewForm postReview={postReview} userStatus={userStatus} />
         {getReviews}
       </div>
     </div>
