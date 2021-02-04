@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import "../assets/scss/main.scss"
+import TopBar from "./layout/TopBar"
 
 const TrailForm = (props) => {
   const [trailRecord, setTrailRecord] = useState({
@@ -22,14 +24,17 @@ const TrailForm = (props) => {
   }
 
   return (
-    <div className="trail-form">
-      <form onSubmit={handleSubmit}>
+    <div>
+      <div>
+        <form onSubmit={handleSubmit}>
         <label htmlFor="name">
           Trail Name:
-          <input
+          <input 
+            class="textboxstyle"
             id="name"
             type="text"
             name="name"
+            placeholder="Trail Name"
             onChange={handleChange}
             value={trailRecord.name}
           />
@@ -38,9 +43,11 @@ const TrailForm = (props) => {
         <label htmlFor="length">
           Trail Length:
           <input
+            class="textboxstyle"
             id="length"
             type="text"
             name="length"
+            placeholder="Trail Length"
             onChange={handleChange}
             value={trailRecord.length}
           />
@@ -49,9 +56,11 @@ const TrailForm = (props) => {
         <label htmlFor="location">
           Trail Location:
           <input
+            class="textboxstyle"
             id="location"
             type="text"
             name="location"
+            placeholder="Trail Location"
             onChange={handleChange}
             value={trailRecord.location}
           />
@@ -60,9 +69,11 @@ const TrailForm = (props) => {
         <label htmlFor="description">
           Trail Description:
           <input
+            class="textboxstyle"
             id="description"
             type="text"
             name="description"
+            placeholder="Trail Description"
             onChange={handleChange}
             value={trailRecord.description}
           />
@@ -71,9 +82,11 @@ const TrailForm = (props) => {
         <label htmlFor="estimateTime">
           Estimated Time to Complete:
           <input
+            class="textboxstyle"
             id="estimateTime"
             type="text"
             name="estimateTime"
+            placeholder="Estimated Time (in hours) to complete:"
             onChange={handleChange}
             value={trailRecord.estimateTime}
           />
@@ -84,6 +97,7 @@ const TrailForm = (props) => {
         </div>
       </form>
     </div>
+  </div>
   )
 }
 

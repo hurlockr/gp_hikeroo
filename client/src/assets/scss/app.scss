@@ -4,126 +4,35 @@
 @include foundation-everything;
 
 body, html {
-    height: 100%;
+  height: 100%;
 }
 
-// body {
-//   background: url(../images/trees-fog-sharp.jpg) no-repeat center center fixed; 
-//   background-position: 50% 50%;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-clip: padding-box;
-// }
-
-  /* Set rules to fill background */
-
-
-
-
-
 .bg-img { 
-  background: linear-gradient(rgba(0, 0, 0, 0.1), 
+  background: linear-gradient(rgba(0, 0, -0.5, -0.5), 
     rgba(0, 0, 0, 1)), 
     url(../images/trees-fog-sharp.jpg);
-  //height: 50%;
-  // background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  // height: 800px;
-
-
   min-height: 100%;
   min-width: 1024px;
-  /* Set up proportionate scaling */
   width: 100%;
   height: auto;
-  /* Set up positioning */
   position: fixed;
   top: 100px;
   left: 0;
 }
 
-
-
-
-  // position:fixed;
-  //   padding:0;
-  //   margin:0;
-  //   top:0;
-  //   left:0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background:rgba(255,255,255,0.5)
-
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
-
 .bg-container {
- display: flex;
- justify-content: center;
- min-height: 100vh;
- align-items: center;
-
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
 }
 
 .bg-text {
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-
   justify-conent: center;
   text-align: center;
   color: $orange;
 }
- 
-// .top-bar {
-//   background: $orange;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: flex-start;
-//   height: 30%;
-// }
 
-// .index-navigation-title {
-//   width: 269px;
-//   height: 124px;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 36px;
-//   line-height: 43px;
-//   text-align: center;
-//   color: $orange;
-// }
-
-.top-bar-img {
-  //<img alt="An outline of a hiker with the state of Massachusetts in orange" 
-  background: url(../images/hiker-trees2.png);
-  height: 124px;
-}
-
-// .index-splash {
-//   background-color: transparent;
-//   //opacity: 0.5;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: flex-start;
-
-// }
-
-  //  <div className="top-bar">
-  //     <div className="top-bar-left">
-  //       <ul className="menu">
-  //         <li className="menu-text">Welcome!</li>
-  //         <li>
-  //           <Link to="/">Hikeroo Home</Link>
-  //         </li>
-  //       </ul>
-  //     </div>
-  //     <div className="top-bar-right">
-  //       <ul className="menu">{user ? authenticatedListItems : unauthenticatedListItems}</ul>
-  //     </div>
-  //   </div>

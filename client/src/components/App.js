@@ -22,10 +22,9 @@ const App = (props) => {
         setCurrentUser(null)
       })
   }, [])
+  
   return (
     <Router>
-
-    
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
@@ -34,8 +33,8 @@ const App = (props) => {
           <div className="bg-container">
             <div className="bg-text">
               <h1>HIKEROO</h1>
-              <h2>Massachusetts trails are cool</h2>
-              <h3>Go!</h3>
+              <h2>All the best trails in Massachusetts</h2>
+              <h3>Let's Go Outside!</h3>
             </div>
             </div>
           </div>
@@ -46,8 +45,6 @@ const App = (props) => {
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/trails/:id" component={TrailShowPage} />
       </Switch>
-      
-
     </Router>
   )
 }

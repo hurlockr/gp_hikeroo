@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignOutButton from "../authentication/SignOutButton";
+import "../../assets/scss/main.scss"
 
 const TopBar = ({ user }) => {
   const unauthenticatedListItems = [
@@ -22,20 +23,18 @@ const TopBar = ({ user }) => {
 
   return (
     <div className="top-bar">
-      <div className="top-bar-img"> AHOO ! </div>
       <div className="top-bar-left">
-        <ul className="menu">
-          <li className="menu-text">Welcome!</li>
-          <li>
-            <Link to="/">Hikeroo Home</Link>
-          </li>
-        </ul>
+        <div><Link to="/">Hikeroo Home</Link></div>
+        <div><Link to="/trails">Trails</Link></div>
+      </div>
+      <div className="top-logo">
       </div>
       <div className="top-bar-right">
-        <ul className="menu">{user ? authenticatedListItems : unauthenticatedListItems}</ul>
+        <div className="menu">{user ? authenticatedListItems : unauthenticatedListItems}
+        </div>
       </div>
     </div>
-  );
+  )
 };
 
 export default TopBar;

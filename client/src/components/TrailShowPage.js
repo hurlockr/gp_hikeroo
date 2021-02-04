@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react"
+import "../assets/scss/main.scss"
+import TopBar from "./layout/TopBar"
 
 const TrailShowPage = (props) => {
   const [trail, setTrail] = useState({
@@ -35,16 +37,16 @@ const TrailShowPage = (props) => {
   })
 
   return (
-    <div>
-      <ul>
-        <li>Name: {trail.name}</li>
-        <li>Length of Trail: {trail.length}</li>
-        <li>Description: {trail.description}</li>
-        <li>Location: {trail.location}</li>
-        <li>Estimate Time: {trail.estimateTime}</li>
-      </ul>
-      <div>{getReviews}</div>
-    </div>
+  <div className="trail-bg-img-show">
+    <ul>
+      <li>Name: {trail.name}</li>
+      <li>Length of Trail: {trail.length}</li>
+      <li>Description: {trail.description}</li>
+      <li>Location: {trail.location}</li>
+      <li>Estimated Time: {trail.estimateTime}</li>
+    </ul>
+    <div>{getReviews}</div>
+  </div>
   )
 }
 

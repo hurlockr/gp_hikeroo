@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormError from "../layout/FormError";
 import config from "../../config";
+import "../../assets/scss/main.scss"
 
 const RegistrationForm = () => {
   const [userPayload, setUserPayload] = useState({
@@ -85,22 +86,32 @@ const RegistrationForm = () => {
   }
 
   return (
+    <div className="form">
+    <div className="trail-bg-img">
     <div className="grid-container" onSubmit={onSubmit}>
       <h1>Register</h1>
       <form>
         <div>
           <label>
             Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
+            <input 
+            className="textboxclass" 
+            type="text" 
+            name="email" 
+            placeholder="Email"
+            value={userPayload.email} 
+            onChange={onInputChange} />
             <FormError error={errors.email} />
           </label>
         </div>
         <div>
-          <label>
+          <label >
             Password
             <input
+              className="textboxclass"
               type="password"
               name="password"
+              placeholder="Password"
               value={userPayload.password}
               onChange={onInputChange}
             />
@@ -111,8 +122,10 @@ const RegistrationForm = () => {
           <label>
             Password Confirmation
             <input
+              className="textboxclass"
               type="password"
               name="passwordConfirmation"
+              placeholder="Password Confirmation"
               value={userPayload.passwordConfirmation}
               onChange={onInputChange}
             />
@@ -123,6 +136,8 @@ const RegistrationForm = () => {
           <input type="submit" className="button" value="Register" />
         </div>
       </form>
+    </div>
+    </div>
     </div>
   );
 };

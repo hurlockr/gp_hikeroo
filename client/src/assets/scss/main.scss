@@ -4,8 +4,9 @@
 @include foundation-everything;
 
 @import "./app.scss";
+@import "./topbar.scss";
+@import "./trails.scss";
 
-// place global css here
 *,
 *::before,
 *::after {

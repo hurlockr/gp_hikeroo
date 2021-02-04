@@ -1,0 +1,35 @@
+@import "./foundation/settings";
+@import "~foundation-sites/scss/foundation";
+@import "./foundation/variables"; 
+@include foundation-everything;
+
+.top-bar {
+  display: flex;
+  background: $white;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.top-logo {
+  display: flex;
+  background: url(../images/hiker-trees.jpg);
+  height: 120px;
+}
+
+ .top-bar-right {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .top-bar-right {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+
+.textboxclass {
+  height: 30px;
+  width: 40%;
+}
+
