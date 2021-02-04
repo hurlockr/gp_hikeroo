@@ -4,6 +4,7 @@ import { hot } from "react-hot-loader/root"
 
 import getCurrentUser from "../services/getCurrentUser"
 import "../assets/scss/main.scss"
+
 import RegistrationForm from "./registration/RegistrationForm"
 import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
@@ -23,16 +24,30 @@ const App = (props) => {
   }, [])
   return (
     <Router>
+
+    
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <h2>Hello from Trails</h2>
+        <div>
+          <div className="bg-img">
+          <div className="bg-container">
+            <div className="bg-text">
+              <h1>HIKEROO</h1>
+              <h2>Massachusetts trails are cool</h2>
+              <h3>Go!</h3>
+            </div>
+            </div>
+          </div>
+        </div>
         </Route>
         <Route exact path="/trails" component={TrailsPage} />
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/trails/:id" component={TrailShowPage} />
       </Switch>
+      
+
     </Router>
   )
 }

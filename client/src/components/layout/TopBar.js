@@ -22,11 +22,12 @@ const TopBar = ({ user }) => {
 
   return (
     <div className="top-bar">
+      <div className="top-bar-img"> AHOO ! </div>
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">App</li>
+          <li className="menu-text">Welcome!</li>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Hikeroo Home</Link>
           </li>
         </ul>
       </div>
