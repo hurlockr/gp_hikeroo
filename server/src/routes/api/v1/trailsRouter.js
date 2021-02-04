@@ -5,8 +5,11 @@ const { ValidationError } = objection
 import { Trail } from "../../../models/index.js"
 import cleanUserInput from "../../../services/cleanUserInput.js"
 import TrailSerializer from "../../serializers/TrailSerializer.js"
+import trailReviewRouter from "./trailReviewRouter.js"
 
 const trailsRouter = new express.Router()
+
+trailsRouter.use("/:id/reviews", trailReviewRouter)
 
 trailsRouter.get("/", async (req, res) => {
   try {

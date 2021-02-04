@@ -5,19 +5,20 @@ const { ValidationError } = objection
 import { Review } from "../../../models/index.js"
 import cleanUserInput from "../../../services/cleanUserInput.js"
 
-const reviewRouter = new express.Router()
+const trailReviewRouter = new express.Router({ mergeParams: true })
 
-reviewRouter.post("/", async (req, res) => {
+trailReviewRouter.post("/", async (req, res) => {
   const { body } = req
   const formInput = cleanUserInput(body)
-  const { comment, rating, trailId } = formInput
+
+  const { comment, rating, userId, trailId } = formInput
 
   try {
     const newReview = await Review.query().insertAndFetch({
       comment,
       rating,
       trailId,
-      userId: 1,
+      userId,
     })
 
     return res.status(201).json({ newReview: newReview })
@@ -30,4 +31,4 @@ reviewRouter.post("/", async (req, res) => {
   }
 })
 
-export default reviewRouter
+export default trailReviewRouter

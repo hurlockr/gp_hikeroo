@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, useParams } from "react-router-dom"
 import { hot } from "react-hot-loader/root"
 
 import getCurrentUser from "../services/getCurrentUser"
@@ -21,6 +21,7 @@ const App = (props) => {
         setCurrentUser(null)
       })
   }, [])
+
   return (
     <Router>
       <TopBar user={currentUser} />
@@ -28,10 +29,14 @@ const App = (props) => {
         <Route exact path="/">
           <h2>Hello from Trails</h2>
         </Route>
-        <Route exact path="/trails" component={TrailsPage} />
+        <Route exact path="/trails">
+          <TrailsPage user={currentUser} />
+        </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
-        <Route exact path="/trails/:id" component={TrailShowPage} />
+        <Route exact path="/trails/:id">
+          <TrailShowPage user={currentUser} />
+        </Route>
       </Switch>
     </Router>
   )

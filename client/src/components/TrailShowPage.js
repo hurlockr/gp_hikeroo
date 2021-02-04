@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import ReviewForm from "./ReviewForm"
 import ErrorList from "./ErrorList"
 import translateServerErrors from "../services/translateServerErrors"
@@ -7,12 +8,11 @@ const TrailShowPage = (props) => {
   const [trail, setTrail] = useState({
     reviews: [],
   })
-  const [newReview, setNewReview] = useState({})
+  const { id } = useParams()
+
   const [errors, setErrors] = useState([])
 
   const getTrail = async () => {
-    const id = props.match.params.id
-
     try {
       const response = await fetch(`/api/v1/trails/${id}`)
       if (!response.ok) {
@@ -29,14 +29,13 @@ const TrailShowPage = (props) => {
 
   useEffect(() => {
     getTrail()
-  }, [newReview])
+  }, [])
 
   const postReview = async (newReviewData) => {
-    const trailId = props.match.params.id
-    const reviewDataTrailId = { ...newReviewData, trailId: trailId }
+    const reviewDataTrailId = { ...newReviewData, trailId: id, userId: props.user.id }
 
     try {
-      const response = await fetch("/api/v1/reviews", {
+      const response = await fetch(`/api/v1/trails/${id}/reviews`, {
         method: "POST",
         headers: new Headers({
           "Content-Type": "application/json",
@@ -55,7 +54,11 @@ const TrailShowPage = (props) => {
         }
       } else {
         const body = await response.json()
-        setNewReview(body)
+        debugger
+        setTrail({
+          ...trail,
+          reviews: [...trail.reviews, body.newReview],
+        })
       }
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`)
