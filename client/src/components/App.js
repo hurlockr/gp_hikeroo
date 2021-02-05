@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { BrowserRouter as Router, Switch, Route, useParams } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import { hot } from "react-hot-loader/root"
 
 import getCurrentUser from "../services/getCurrentUser"
 import "../assets/scss/main.scss"
+
 import RegistrationForm from "./registration/RegistrationForm"
 import SignInForm from "./authentication/SignInForm"
 import TopBar from "./layout/TopBar"
@@ -27,7 +28,19 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/">
-          <h2>Hello from Trails</h2>
+          <div>
+            <div className="bg-img">
+              <div className="bg-container">
+                <div className="bg-text">
+                  <h1 className="app-header">HIKEROO</h1>
+                  <h2>All the best trails in Massachusetts</h2>
+                  <Link to="/trails">
+                    <a className="button large expanded">Let's Go Outside!</a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </Route>
         <Route exact path="/trails">
           <TrailsPage user={currentUser} />

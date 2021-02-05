@@ -27,21 +27,28 @@ const ReviewForm = ({ postReview }) => {
   }
 
   return (
-    <div>
+    <div className="review-form textboxclass">
       <form onSubmit={handleSubmit}>
         <label>
-          comment:
+          <p>Comment:</p>
           <input
             type="text"
             name="comment"
+            placeholder="Your Comments About This Trail:"
             onChange={handleInputChange}
             value={newReview.comment}
           />
         </label>
 
         <label>
-          rating:
-          <input type="text" name="rating" onChange={handleInputChange} value={newReview.rating} />
+          <p>Rating:</p>
+          <input
+            type="text"
+            name="rating"
+            placeholder="Your Rating:"
+            onChange={handleInputChange}
+            value={newReview.rating}
+          />
         </label>
         <div>
           <input className="button" type="submit" value="Post Review" />

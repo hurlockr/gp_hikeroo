@@ -22,16 +22,16 @@ const TopBar = ({ user }) => {
 
   return (
     <div className="top-bar">
-      <div className="top-bar-left">
-        <ul className="menu">
-          <li className="menu-text">App</li>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
+      <div className="top-bar-left ">
+        <Link to="/">
+          <button class="hollow button button-home">Home</button>
+        </Link>
+        <Link to="/trails">
+          <button class="hollow button">Trails</button>
+        </Link>
       </div>
       <div className="top-bar-right">
-        <ul className="menu">{user ? authenticatedListItems : unauthenticatedListItems}</ul>
+        <div className="menu">{user ? authenticatedListItems : unauthenticatedListItems}</div>
       </div>
     </div>
   )

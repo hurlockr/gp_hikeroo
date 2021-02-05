@@ -1,7 +1,18 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
+@import "./variables.scss";
 @include foundation-everything;
-// place global css here
+
+@import "./app.scss";
+@import "./topbar.scss";
+@import "./trails.scss";
+
+.button-group {
+  border-radius: 20px;
+  background: #f17b30;
+  outline: none !important;
+}
+
 *,
 *::before,
 *::after {

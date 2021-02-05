@@ -33,67 +33,79 @@ const TrailForm = (props) => {
   }
 
   return (
-    <div className="trail-form">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Trail Name:
-          <input
-            id="name"
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={trailRecord.name}
-          />
-        </label>
+    <div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">
+            Trail Name:
+            <input
+              class="textboxstyle"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Trail Name"
+              onChange={handleChange}
+              value={trailRecord.name}
+            />
+          </label>
 
-        <label htmlFor="length">
-          Trail Length:
-          <input
-            id="length"
-            type="text"
-            name="length"
-            onChange={handleChange}
-            value={trailRecord.length}
-          />
-        </label>
+          <label htmlFor="length">
+            Trail Length:
+            <input
+              class="textboxstyle"
+              id="length"
+              type="text"
+              name="length"
+              placeholder="Trail Length"
+              onChange={handleChange}
+              value={trailRecord.length}
+            />
+          </label>
 
-        <label htmlFor="location">
-          Trail Location:
-          <input
-            id="location"
-            type="text"
-            name="location"
-            onChange={handleChange}
-            value={trailRecord.location}
-          />
-        </label>
+          <label htmlFor="location">
+            Trail Location:
+            <input
+              class="textboxstyle"
+              id="location"
+              type="text"
+              name="location"
+              placeholder="Trail Location"
+              onChange={handleChange}
+              value={trailRecord.location}
+            />
+          </label>
 
-        <label htmlFor="description">
-          Trail Description:
-          <input
-            id="description"
-            type="text"
-            name="description"
-            onChange={handleChange}
-            value={trailRecord.description}
-          />
-        </label>
+          <label htmlFor="description">
+            Trail Description:
+            <input
+              class="textboxstyle"
+              id="description"
+              type="text"
+              name="description"
+              placeholder="Trail Description"
+              onChange={handleChange}
+              value={trailRecord.description}
+            />
+          </label>
 
-        <label htmlFor="estimateTime">
-          Estimated Time to Complete:
-          <input
-            id="estimateTime"
-            type="text"
-            name="estimateTime"
-            onChange={handleChange}
-            value={trailRecord.estimateTime}
-          />
-        </label>
+          <label htmlFor="estimateTime">
+            Estimated Time to Complete:
+            <input
+              class="textboxstyle"
+              id="estimateTime"
+              type="text"
+              name="estimateTime"
+              placeholder="Estimated Time (in hours) to complete:"
+              onChange={handleChange}
+              value={trailRecord.estimateTime}
+            />
+          </label>
 
-        <div className="button-group">
-          <input className="button" type="submit" value="Post Trail" />
-        </div>
-      </form>
+          <div>
+            <input className="button" type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
     </div>
   )
 }

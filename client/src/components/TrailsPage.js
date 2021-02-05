@@ -66,11 +66,18 @@ const TrailsPage = (props) => {
   })
 
   return (
-    <div>
-      <h1>All the amazing trails in Massachusetts</h1>
-      <ErrorList errors={errors} />
-      <TrailForm addTrail={addTrail} user={user} />
-      <ul>{trailListItems}</ul>
+    <div className="trail-bg-img-trails">
+      <div className="trails-and-form">
+        <div className="trails-left">
+          <h3>All the amazing trails in Massachusetts:</h3>
+          <ul>{trailListItems}</ul>
+        </div>
+        <div className="form-right">
+          <h3>Add New trail:</h3>
+          <ErrorList errors={errors} />
+          <TrailForm addTrail={addTrail} />
+        </div>
+      </div>
     </div>
   )
 }

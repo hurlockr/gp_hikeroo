@@ -1,0 +1,64 @@
+@import "./foundation/settings";
+@import "~foundation-sites/scss/foundation";
+@import "./variables";
+@include foundation-everything;
+
+.button-group {
+  border-radius: 20px;
+  background: #f17b30;
+  outline: none !important;
+}
+
+.button {
+  border-radius: 20px;
+  background: #f17b30;
+  outline: none !important;
+}
+
+button:active {
+  outline: none !important;
+  border: none;
+}
+
+.top-bar {
+  display: flex;
+  background: url(../../assets/images/top3.jpg);
+  background-repeat: no-repeat;
+  height: 100px;
+  width: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.top-logo {
+  display: flex;
+  background: url(../../assets/images/top3.jpg);
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.top-bar-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar-left {
+  display: flex;
+  margin-left: 80px;
+}
+
+.textboxclass {
+  height: 30px;
+  width: 40%;
+}
+
+.hollow {
+  margin: 7px;
+}
+
+button-home {
+  width: 200px;
+  height: 100px;
+  border-radius: 80px;
+}

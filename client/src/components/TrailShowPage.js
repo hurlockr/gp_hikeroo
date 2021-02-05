@@ -84,22 +84,26 @@ const TrailShowPage = (props) => {
     loginStatusError = (
       <div>
         <p>
-          <p>To Post a Review:</p>
-          <Link to="/users/new">Register </Link>
-          <Link to="/user-sessions/new">Sign In</Link>
+          <p className="padding">To Post a Review:</p>
+          <Link className="button padding" to="/users/new">
+            Register
+          </Link>
+          <Link className="button padding" to="/user-sessions/new">
+            Sign In
+          </Link>
         </p>
       </div>
     )
   }
 
   return (
-    <div>
+    <div className="trail-bg-img-show">
       <ul>
         <li>Name: {trail.name}</li>
-        <li>Length of Trail: {trail.length}</li>
+        <li>Length of Trail in Miles: {trail.length}</li>
         <li>Description: {trail.description}</li>
         <li>Location: {trail.location}</li>
-        <li>Estimate Time: {trail.estimateTime}</li>
+        <li>Estimated Time Needed to Complete: {trail.estimateTime}</li>
       </ul>
       <div>
         <ErrorList errors={errors} />

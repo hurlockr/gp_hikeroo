@@ -1,0 +1,192 @@
+body,
+html {
+  height: 100%;
+}
+
+button:active {
+  outline: none !important;
+  border: none;
+}
+
+p {
+  color: $white;
+  font-size: 1.4em;
+}
+
+a {
+  color: #4b0080;
+  text-align: center;
+  border-radius: 20px;
+}
+
+a:visited {
+  color: #4b00807b;
+  border-radius: 20px;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #f17b30;
+  border-radius: 20px;
+}
+
+.button-group {
+  border-radius: 20px;
+  background: #f17b30;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 30px;
+  width: 40%;
+}
+
+.review-form {
+  display: flex;
+  margin: 0 25px;
+}
+
+.textboxclass {
+  height: 30px;
+  width: 60%;
+}
+
+.trail-bg-img {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(../images/forest-fog.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: $black;
+    font-size: 1.2em;
+  }
+}
+
+.trail-bg-img-trails {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+    url(../images/trees-birch-fog.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  left: 0;
+}
+
+.padding {
+  margin: 0 15px;
+}
+
+.trail-bg-img-signin {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(../images/forest-fog.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  left: 0;
+}
+
+.textboxstyle {
+  width: 300px;
+  height: 40px;
+}
+
+.form-right {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 25px;
+  justify-content: flex-end;
+}
+
+.trails-left {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: $white;
+  justify-content: flex-start;
+  filter: alpha(opacity=80);
+  opacity: 0.7;
+  color: $black;
+}
+
+.trail-list {
+  ul {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: $white;
+    filter: alpha(opacity=80);
+    opacity: 0.7;
+    position: relative;
+    width: 90%;
+    left: 1em;
+    color: $black;
+  }
+}
+
+.trails-and-form {
+  display: flex;
+  margin: 0 25px;
+  flex-direction: row;
+}
+
+.trail-bg-img-single {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(../images/trees-path.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  ul {
+    display: flex;
+    align-items: flex-end;
+    color: $white;
+    font-size: 1.2em;
+  }
+}
+
+.trail-bg-img-show {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(135, 135, 135, 0.461)),
+    url(../images/trees-path.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  li {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: $white;
+    filter: alpha(opacity=80);
+    opacity: 0.7;
+    position: relative;
+    width: 80%;
+    left: 1em;
+    color: $black;
+  }
+}

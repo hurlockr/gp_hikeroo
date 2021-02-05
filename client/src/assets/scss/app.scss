@@ -1,0 +1,50 @@
+@import "./foundation/settings";
+@import "~foundation-sites/scss/foundation";
+@import "./variables";
+@include foundation-everything;
+
+body,
+html {
+  height: 100%;
+}
+
+.app-header {
+  h1 {
+    text-shadow: 2px 2px #fcfcfc;
+  }
+}
+
+button:active {
+  outline: none !important;
+  border: none;
+}
+
+.button-group {
+  outline: none !important;
+  border-radius: 20px;
+  background: #f17b30;
+}
+
+.bg-img {
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1)),
+    url(../images/pine-trees.png);
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 120px;
+  left: 0;
+}
+
+.bg-container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.bg-text {
+  text-align: center;
+  color: $orange;
+}

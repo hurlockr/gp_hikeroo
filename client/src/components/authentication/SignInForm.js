@@ -64,13 +64,20 @@ const SignInForm = () => {
   }
 
   return (
-    <div className="grid-container" onSubmit={onSubmit}>
+    <div className="form trail-bg-img-signin grid-container">
       <h1>Sign In</h1>
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <label>
             Email
-            <input type="text" name="email" value={userPayload.email} onChange={onInputChange} />
+            <input
+              className="textboxstyle"
+              type="text"
+              name="email"
+              placeholder="Email address"
+              value={userPayload.email}
+              onChange={onInputChange}
+            />
             <FormError error={errors.email} />
           </label>
         </div>
@@ -78,8 +85,10 @@ const SignInForm = () => {
           <label>
             Password
             <input
+              className="textboxstyle"
               type="password"
               name="password"
+              placeholder="Password"
               value={userPayload.password}
               onChange={onInputChange}
             />
