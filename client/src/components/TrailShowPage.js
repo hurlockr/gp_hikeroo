@@ -37,37 +37,35 @@ const TrailShowPage = (props) => {
   const postReview = async (newReviewData) => {
     if (!userStatus) {
       setLoginStatus(false)
-    }
-
-    const reviewDataTrailId = { ...newReviewData, trailId: id, userId: props.user.id }
-
-    try {
-      const response = await fetch(`/api/v1/trails/${id}/reviews`, {
-        method: "POST",
-        headers: new Headers({
-          "Content-Type": "application/json",
-        }),
-        body: JSON.stringify(reviewDataTrailId),
-      })
-      if (!response.ok) {
-        if (response.status === 422) {
-          const body = await response.json()
-          const newErrors = translateServerErrors(body.errors)
-          return setErrors(newErrors)
-        } else {
-          const errorMessage = `${response.status} (${response.statusText})`
-          const error = new Error(errorMessage)
-          throw error
-        }
-      } else {
-        const body = await response.json()
-        setTrail({
-          ...trail,
-          reviews: [...trail.reviews, body.newReview],
+    } else {
+      try {
+        const response = await fetch(`/api/v1/trails/${id}/reviews`, {
+          method: "POST",
+          headers: new Headers({
+            "Content-Type": "application/json",
+          }),
+          body: JSON.stringify(newReviewData),
         })
+        if (!response.ok) {
+          if (response.status === 422) {
+            const body = await response.json()
+            const newErrors = translateServerErrors(body.errors)
+            return setErrors(newErrors)
+          } else {
+            const errorMessage = `${response.status} (${response.statusText})`
+            const error = new Error(errorMessage)
+            throw error
+          }
+        } else {
+          const body = await response.json()
+          setTrail({
+            ...trail,
+            reviews: [...trail.reviews, body.newReview],
+          })
+        }
+      } catch (error) {
+        console.error(`Error in fetch: ${error.message}`)
       }
-    } catch (error) {
-      console.error(`Error in fetch: ${error.message}`)
     }
   }
 

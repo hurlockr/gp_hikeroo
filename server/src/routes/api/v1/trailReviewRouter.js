@@ -10,9 +10,12 @@ const trailReviewRouter = new express.Router({ mergeParams: true })
 trailReviewRouter.post("/", async (req, res) => {
   const { body } = req
   const formInput = cleanUserInput(body)
+  const reviewId = req.params
+  const { comment, rating } = formInput
 
-  const { comment, rating, userId, trailId } = formInput
-
+  // const comment = forInput.comment
+  // const rating =
+  debugger
   try {
     const newReview = await Review.query().insertAndFetch({
       comment,
