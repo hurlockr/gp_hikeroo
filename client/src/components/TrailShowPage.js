@@ -108,10 +108,9 @@ const TrailShowPage = (props) => {
       <div>
         <ErrorList errors={errors} />
         {loginStatusError}
-        <ReviewForm postReview={postReview} userStatus={userStatus} />
         <div>{getReviews}</div>
+        <ReviewForm postReview={postReview} userStatus={userStatus} />
       </div>
-      <div>{getReviews}</div>
     </div>
   )
 }
