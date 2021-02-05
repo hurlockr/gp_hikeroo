@@ -42,10 +42,14 @@ const App = (props) => {
             </div>
           </div>
         </Route>
-        <Route exact path="/trails" component={TrailsPage} />
+        <Route exact path="/trails">
+          <TrailsPage user={currentUser} />
+        </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
-        <Route exact path="/trails/:id" component={TrailShowPage} />
+        <Route exact path="/trails/:id">
+          <TrailShowPage user={currentUser} />
+        </Route>
       </Switch>
     </Router>
   )

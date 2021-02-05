@@ -8,6 +8,12 @@ html {
   height: 100%;
 }
 
+.app-header {
+  h1 {
+    text-shadow: 2px 2px #fcfcfc;
+  }
+}
+
 button:active {
   outline: none !important;
   border: none;

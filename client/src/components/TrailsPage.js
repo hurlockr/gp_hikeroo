@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import TrailForm from "./TrailForm"
 import ErrorList from "./ErrorList"
 import translateServerErrors from "../services/translateServerErrors"
@@ -7,6 +7,8 @@ import translateServerErrors from "../services/translateServerErrors"
 const TrailsPage = (props) => {
   const [trails, setTrails] = useState([])
   const [errors, setErrors] = useState([])
+
+  const user = props.user
 
   const getTrails = async () => {
     try {

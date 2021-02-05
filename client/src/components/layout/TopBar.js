@@ -29,9 +29,6 @@ const TopBar = ({ user }) => {
         <Link to="/trails">
           <button class="hollow button">Trails</button>
         </Link>
-        <Link to="/reviews">
-          <button class="hollow button">Reviews</button>
-        </Link>
       </div>
       <div className="top-bar-right">
         <div className="menu">{user ? authenticatedListItems : unauthenticatedListItems}</div>
