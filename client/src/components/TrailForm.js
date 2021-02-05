@@ -19,6 +19,17 @@ const TrailForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     props.addTrail(trailRecord)
+    clearForm()
+  }
+
+  const clearForm = () => {
+    setTrailRecord({
+      name: "",
+      length: "",
+      location: "",
+      description: "",
+      estimateTime: "",
+    })
   }
 
   return (
@@ -80,7 +91,7 @@ const TrailForm = (props) => {
         </label>
 
         <div className="button-group">
-          <input className="button" type="submit" value="Submit" />
+          <input className="button" type="submit" value="Post Trail" />
         </div>
       </form>
     </div>
