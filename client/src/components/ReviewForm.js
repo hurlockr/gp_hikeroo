@@ -44,7 +44,7 @@ const ReviewForm = ({ postReview }) => {
           <input type="text" name="rating" onChange={handleInputChange} value={newReview.rating} />
         </label>
         <div>
-          <input className="button" type="submit" value="submit" />
+          <input className="button" type="submit" value="Post Review" />
         </div>
       </form>
     </div>
