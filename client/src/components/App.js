@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import { hot } from "react-hot-loader/root"
 
 import getCurrentUser from "../services/getCurrentUser"
@@ -32,9 +32,11 @@ const App = (props) => {
             <div className="bg-img">
               <div className="bg-container">
                 <div className="bg-text">
-                  <h1>HIKEROO</h1>
+                  <h1 className="app-header">HIKEROO</h1>
                   <h2>All the best trails in Massachusetts</h2>
-                  <h3>Let's Go Outside!</h3>
+                  <Link to="/trails">
+                    <a className="button large expanded">Let's Go Outside!</a>
+                  </Link>
                 </div>
               </div>
             </div>

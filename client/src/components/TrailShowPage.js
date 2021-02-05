@@ -38,10 +38,10 @@ const TrailShowPage = (props) => {
     <div className="trail-bg-img-show">
       <ul>
         <li>Name: {trail.name}</li>
-        <li>Length of Trail: {trail.length}</li>
+        <li>Length of Trail in Miles: {trail.length}</li>
         <li>Description: {trail.description}</li>
         <li>Location: {trail.location}</li>
-        <li>Estimated Time: {trail.estimateTime}</li>
+        <li>Estimated Time Needed to Complete: {trail.estimateTime}</li>
       </ul>
       <div>{getReviews}</div>
     </div>

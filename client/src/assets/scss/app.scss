@@ -8,7 +8,13 @@ html {
   height: 100%;
 }
 
+button:active {
+  outline: none !important;
+  border: none;
+}
+
 .button-group {
+  outline: none !important;
   border-radius: 20px;
   background: #f17b30;
 }
@@ -16,7 +22,6 @@ html {
 .bg-img {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1)),
     url(../images/pine-trees.png);
-  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   width: 100%;

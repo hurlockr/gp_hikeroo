@@ -91,7 +91,7 @@ const TrailForm = (props) => {
           </label>
 
           <div>
-            <input className="button-group" type="submit" value="Submit" />
+            <input className="button" type="submit" value="Submit" />
           </div>
         </form>
       </div>
